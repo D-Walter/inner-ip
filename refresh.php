@@ -5,5 +5,6 @@ error_reporting(E_ALL ^ E_NOTICE);
 ini_set('display_errors', 1);
 $new_ip = $_POST["nip"];
 $myfile = fopen("./curip.json", "w");
-$dstring = date('Y-m-d h:i:s', time());
-fwrite($myfile,json_encode({"cip":$new_ip,"udt":$dstring}));
+$dstring = date('Y-m-d H:i:s', time());
+$nar = array("cip"=>$new_ip,"udt"=>$dstring);
+fwrite($myfile,json_encode($nar));
